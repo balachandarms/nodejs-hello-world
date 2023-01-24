@@ -1,0 +1,17 @@
+name: stage1
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  stage1:
+    name: dummy stage
+    runs-on: ubuntu-latest
+    steps:
+      - name: print output
+        run: hostname
+        
+
