@@ -6,11 +6,11 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("getintodevops/hellonode")
+        app = docker.build("balachandar126/rsa_nodejs_app")
     }
 
     stage('Push image') {
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+        docker.withRegistry('https://registry.hub.docker.com', 'dockerhubcredentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
